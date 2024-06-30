@@ -7,7 +7,7 @@ font-family: 'Times New Roman', Times, serif;
 h1 {
 color: yellow;
 text-align: center;
-text-shadow: 3px 3px #000000;
+text-shadow: 3px 3px 5px #000000;
 font-size: 30px;
 font-family: 'Times New Roman', Times, serif;
 }
@@ -17,7 +17,7 @@ color: red;
 font-family: 'Times New Roman', Times, serif;
 font-size: 20px;
 text-align: center;
-text-shadow: 3px 3px #000000;
+text-shadow: 3px 3px 5px #000000;
 }
 
 a {
@@ -32,7 +32,7 @@ padding: 20px;
 div {
 text-decoration: none;
 text-align: center;
-text-shadow: 3px 3px #000000;
+text-shadow: 3px 3px 5px #000000;
 font-family: 'Times New Roman', Times, serif;
 word-spacing: 3px;
 }
@@ -40,7 +40,7 @@ word-spacing: 3px;
 h5 {
 text-align: center;
 color: white;
-text-shadow: 3px 3px #000000;
+text-shadow: 3px 3px 5px #000000;
 font-family: 'Times New Roman', Times, serif;
 }
 
@@ -52,18 +52,20 @@ margin-right: auto;
 footer {
 text-align: center;
 color: white;
-text-shadow: 3px 3px #000000;
+text-shadow: 3px 3px 5px #000000;
 font-family: 'Times New Roman', Times, serif;
 }
 
 form {
 font-size: 20px;
 color: orange;
+text-shadow: 3px 3px 5px #000000;
 font-family: 'Times New Roman', Times, serif;
 }
 
 label {
 font-size: 20px;
 color: lightblue;
+text-shadow: 3px 3px 5px #000000;
 font-family: 'Times New Roman', Times, serif;
 }
