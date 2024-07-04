@@ -69,3 +69,15 @@ color: lightblue;
 text-shadow: 3px 3px 5px #000000;
 font-family: 'Times New Roman', Times, serif;
 }
+
+img {
+width: 100px;
+height: 135px;
+}
+
+h4 {
+text-align: center;
+color: white;
+text-shadow: 3px 3px 5px #000000;
+font-family: 'Times New Roman', Times, serif;
+    }
