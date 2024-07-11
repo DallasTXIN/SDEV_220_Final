@@ -10,16 +10,29 @@
 
 <!--Self-explanitory; helps people move to other places of the site.-->
 <a href="{% url 'index' %}">Home</a>
-<a href="{% url 'car' %}">Part Lookup</a>
+<a href="{% url 'parts' %}">Part Lookup</a>
 <a href="{% url 'about' %}">About</a>
 </div>
 <body>
 
-<p>Please put in the part(s) you need.</p>
-<form>
-    <label for="part">Part:</label>
-    <input type="text" id="part" name="part">
-  </form>
+<p>Please put in the part(s) </p>
+<form method="get">
+  {{ form.as_p }}
+  <button type="submit">Show Parts</button>
+</form>
+
+{% if parts is not None %}
+  {% if parts %}
+      <h2>Available Parts:</h2>
+      <ul>
+      {% for part in parts %}
+          <li>{{ part.name }} - {{ part.description }}</li>
+      {% endfor %}
+      </ul>
+  {% else %}
+      <p>No parts found for the selected combination.</p>
+  {% endif %}
+{% endif %}
 <br><br><br><br><br>
 <h5><em>Copyright © 2024 Genuine Parts Company</em></h5>
 

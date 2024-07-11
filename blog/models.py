@@ -1,18 +1,21 @@
 from django.db import models
-from django.conf import settings
-from django.utils import timezone
+
 
 # Create your models here.
-class Post(models.Model):
-    #grab author from another table
-    author=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)#if deleted, deleted everything
-    title=models.CharField(max_length=200)
-    text = models.TextField()
-    created_date=models.DateTimeField(default=timezone.now)
-    published_date=models.DateTimeField(blank=True, null=True)# blank and empty when first post
-    def publish(self):
-        self.published_date=timezone.now
-        self.save()
+
+
+
+class Car(models.Model):
+    make = models.CharField(max_length=100)
+    year = models.IntegerField()
+    model = models.CharField(max_length=100)
+    engine = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.title
+        return f"{self.year} {self.make} {self.model} - {self.engine}"
+class Part(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    car = models.ForeignKey(Car, on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.name}-{self.description}-{self.car}"
