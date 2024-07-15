@@ -1,31 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head><meta charset="utf-8">
-<link rel="shortcut icon" href="napa.png"/>
-<title>Napa Auto Parts</title>
-<link rel="stylesheet" href="topic.css">
-</head>
-<h1>Napa Auto Parts</h1>
-<div>
-
-<!--Self-explanitory; helps people move to other places of the site.-->
-<a href="{% url 'index' %}">Home</a>
-<a href="{% url 'parts' %}">Part Lookup</a>
-<a href="{% url 'about' %}">About</a>
-</div>
-<body>
-
-<p>Please put in your Car info </p>
+{% extends 'blog/base.html' %}
+{% block content %}
+<p>Please Put in Your Car Info </p>
 <form method="get">
-  {{ form.as_p }}
-  <button type="submit">Show Parts</button>
+  {{ car_form.as_p }}
+  <button type="submit" name="car_submit">Show Parts</button>
 </form>
 
-{% if parts is not None %}
-  {% if parts %}
-      <h2>Available Parts:</h2>
-      <ul>
-      {% for part in parts %}
+{% if car_results is not None %}
+  {% if car_results %}
+      <h3>Available Parts:</h3>
+      <ul class="part-list">
+      {% for part in car_results %}
           <li>{{ part.name }} - {{ part.description }}</li>
       {% endfor %}
       </ul>
@@ -33,8 +18,26 @@
       <p>No parts found for the selected combination.</p>
   {% endif %}
 {% endif %}
-<br><br><br><br><br>
-<h5><em>Copyright © 2024 Genuine Parts Company</em></h5>
 
-</body>
-</html>
+<p>Find Cars for a Specific Part</p>
+<form method="get">
+    {{ part_form.as_p }}
+    <button type="submit" name="part_submit">Show Cars</button>
+</form>
+
+
+{% if part_results is not None %}
+        {% if part_results %}
+            <h3>Cars with Selected Part:</h3>
+            <ul class="car-list">
+            {% for car in part_results %}
+                <li>{{ car.year }} {{ car.make }} {{ car.model }} - {{ car.engine }}</l>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No cars found with the selected part.</p>
+        {% endif %}
+{% endif %}
+
+
+{% endblock %}
