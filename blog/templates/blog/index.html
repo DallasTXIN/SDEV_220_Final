@@ -1,38 +1,25 @@
+
+{% extends 'blog/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/topic.css' %}">
-    <link rel="shortcut icon" href="napa.png"/>
-    <title>Napa Auto Parts</title>
-    <link rel="stylesheet" href="topic.css">
-</head>
-<h1>Napa Auto Parts</h1>
-<div>
+{% block content %}
 
-<!--Self-explanitory; helps people move to other places of the site.-->
-<a href="{% url 'index' %}">Home</a>
-<a href="{% url 'parts' %}">Part Lookup</a>
-<a href="{% url 'about' %}">About</a>
-</div>
-<body>
-
-<p>Welcome to the official site of Napa Auto Parts. This website will help you with what parts you need.</p>
-<p>Go to <em>Part Lookup</em> if you need to find a part.</p>
-<p>If you want to know more about Napa Auto, go to <em>About.</em></p>
-<br><br><br>
-<img src="bosch_icon.png" alt="Bosch Icon Wiper Blade">
-<h4>Bosch Icon Wiper Blade - $14.99 Each</h4>
-<br><br>
-<img src="5w20_napa_oil_5qt.png" alt="5W20 Napa Synthetic Oil 5 Quart">
-<h4>5W20 Napa Synthetic Oil 5 Quart - $19.99 Each</h4>
-<br><br>
-<img src="5w20_napa_oil_quart.png" alt="5W20 Napa Synthetic Oil Quart">
-<h4>5W20 Napa Synthetic Oil Quart - $4.99 Each</h4>
-<br><br><br><br><br>
-<h5><em>Copyright © 2024 Genuine Parts Company</em></h5>
-
-</body>
-</html>
+    <div class="container">
+    <body>
+    <img src="{% static 'image/napa.png' %}" alt="Napa Logo">
+    <p>Welcome to the official site of Napa Auto Parts. This website will help you with what parts you need.</p>
+    <p>Go to <em>Part Lookup</em> if you need to find a part.</p>
+    <p>If you want to know more about Napa Auto, go to <em>About.</em></p>
+    <br><br><br>
+    <img src="{% static 'image/bosch_icon.png' %}" alt="Bosch Icon Wiper Blade">
+    <h4>Bosch Icon Wiper Blade - $14.99 Each</h4>
+    <br><br>
+    <img src="{% static 'image/5w20_napa_oil_5qt.png' %}" alt="5W20 Napa Synthetic Oil 5 Quart">
+    <h4>5W20 Napa Synthetic Oil 5 Quart - $19.99 Each</h4>
+    <br><br>
+    <img src="{% static 'image/5w20_napa_oil_quart.png' %}" alt="5W20 Napa Synthetic Oil Quart">
+    <h4>5W20 Napa Synthetic Oil Quart - $4.99 Each</h4>
+    </div>
+    
+    </body>
+    </html>
+{% endblock %}

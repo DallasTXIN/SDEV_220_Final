@@ -1,43 +1,44 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-<p>Please Put in Your Car Info </p>
-<form method="get">
-  {{ car_form.as_p }}
-  <button type="submit" name="car_submit">Show Parts</button>
-</form>
+<div class="container">
+    <h3>Please Put in Your Car Info</h3>
+    <form method="get">
+        {{ car_form.as_p }}
+        <button type="submit" name="car_submit" class="btn btn-primary">Show Parts</button>
+    </form>
 
-{% if car_results is not None %}
-  {% if car_results %}
-      <h3>Available Parts:</h3>
-      <ul class="part-list">
-      {% for part in car_results %}
-          <li>{{ part.name }} - {{ part.description }}</li>
-      {% endfor %}
-      </ul>
-  {% else %}
-      <p>No parts found for the selected combination.</p>
-  {% endif %}
-{% endif %}
+    {% if car_results is not None %}
+        {% if car_results %}
+            <h3>Available Parts:</h3>
+            <ul class="part-list">
+                {% for part in car_results %}
+                    <li>{{ part.name }} - {{ part.description }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No parts found for the selected combination.</p>
+        {% endif %}
+    {% endif %}
+</div>
 
-<p>Find Cars for a Specific Part</p>
-<form method="get">
-    {{ part_form.as_p }}
-    <button type="submit" name="part_submit">Show Cars</button>
-</form>
+<div class="container">
+    <h3>Find Cars for a Specific Part</h3>
+    <form method="get">
+        {{ part_form.as_p }}
+        <button type="submit" name="part_submit" class="btn btn-primary">Show Cars</button>
+    </form>
 
-
-{% if part_results is not None %}
+    {% if part_results is not None %}
         {% if part_results %}
             <h3>Cars with Selected Part:</h3>
             <ul class="car-list">
-            {% for car in part_results %}
-                <li>{{ car.year }} {{ car.make }} {{ car.model }} - {{ car.engine }}</l>
-            {% endfor %}
+                {% for car in part_results %}
+                    <li>{{ car.year }} {{ car.make }} {{ car.model }} - {{ car.engine }}</li>
+                {% endfor %}
             </ul>
         {% else %}
             <p>No cars found with the selected part.</p>
         {% endif %}
-{% endif %}
-
-
+    {% endif %}
+</div>
 {% endblock %}

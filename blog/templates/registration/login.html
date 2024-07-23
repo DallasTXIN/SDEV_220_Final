@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    
+<div class="container">
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table class="form-table">
+            <tr>
+                <td class="form-label">{{ form.username.label_tag }}</td>
+                <td class="form-input">{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td class="form-label">{{ form.password.label_tag }}</td>
+                <td class="form-input">{{ form.password }}</td>
+            </tr>
+        </table>
+        <input type="submit" class="btn btn-secondary" value="Login">
+        <input type="hidden" name="next" value="{{ next }}">
+    </form>
+</div>
+ 
+  
+{% endblock %}

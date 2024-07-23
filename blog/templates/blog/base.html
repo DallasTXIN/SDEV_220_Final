@@ -9,14 +9,26 @@
     <title>Napa Auto Parts</title>
     <link rel="stylesheet" href="topic.css">
 </head>
-<h1>Napa Auto Parts</h1>
-<div>
+    <header class="page-header">
+    <div class="container">
+        {%if user.is_authenticated%}
+            <a href="{% url 'logout' %}" class="topmenu">
+                {% include './icons/door-open-fill.svg' %}
+            </a>
+        {% else %}
+            <a href="{% url 'login' %}" class="topmenu">
+                {% include './icons/door-open.svg' %}
+            </a>
+        {% endif%}
+    <h1><a href="/">Napa Auto Parts</a></h1>
 
-<!--Self-explanitory; helps people move to other places of the site.-->
-<a href="{% url 'index' %}">Home</a>
-<a href="{% url 'parts' %}">Part Lookup</a>
-<a href="{% url 'about' %}">About</a>
-</div>
+    </div>
+
+    <div class="container">
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'parts' %}">Part Lookup</a>
+        <a href="{% url 'about' %}">About</a>
+    </div>
 <body>
 {% block content %}
 {% endblock%}
