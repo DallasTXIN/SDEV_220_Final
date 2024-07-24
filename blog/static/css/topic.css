@@ -1,0 +1,159 @@
+body {
+background-color: darkblue;
+text-align: center;
+font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+color: yellow;
+text-align: center;
+text-shadow: 3px 3px 5px #000000;
+font-size: 30px;
+font-family: 'Times New Roman', Times, serif;
+}
+
+p,h3 {
+color: red;
+font-family: 'Times New Roman', Times, serif;
+font-size: 20px;
+text-align: center;
+text-shadow: 3px 3px 5px #000000;
+}
+
+.part-list li, .car-list li {
+    font-family: Arial, sans-serif; 
+    color: #ff6600; 
+    font-size: 16px; 
+    margin-bottom: 10px; 
+}
+
+a {
+text-decoration: none;
+color: yellow;
+position: center;
+font-size: 30px;
+font-family: 'Times New Roman', Times, serif;
+padding: 20px;
+}
+
+div {
+text-decoration: none;
+text-align: center;
+text-shadow: 3px 3px 5px #000000;
+font-family: 'Times New Roman', Times, serif;
+word-spacing: 3px;
+color: green;
+}
+
+h5 {
+text-align: center;
+color: white;
+text-shadow: 3px 3px 5px #000000;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.center {
+margin-left: auto;
+margin-right: auto;
+}
+
+footer {
+text-align: center;
+color: white;
+text-shadow: 3px 3px 5px #000000;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.form {
+font-size: 20px;
+color: orange;
+text-shadow: 3px 3px 5px #000000;
+font-family: 'Times New Roman', Times, serif;
+text-align: center;
+}
+
+label {
+font-size: 20px;
+color: lightblue;
+text-shadow: 3px 3px 5px #000000;
+font-family: 'Times New Roman', Times, serif;
+}
+
+img {
+width: auto;
+height: auto;
+}
+
+h4 {
+text-align: center;
+color: white;
+text-shadow: 3px 3px 5px #000000;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.topmenu,
+.topmenu:hover,
+.topmenu:visited{
+    color:#fff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+
+.form-table {
+    margin: 0 auto; 
+    border-collapse: collapse; 
+}
+
+.form-table td {
+    padding: 10px; 
+}
+
+.form-label {
+    text-align: right; 
+    width: 150px;
+}
+
+.form-input {
+    text-align: left; 
+}
+
+input[type="submit"] {
+    margin-top: 10px; 
+}
+
+form button {
+    margin-top: 10px; 
+}
+
+.btn-primary {
+    background-color: #007bff; 
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+
+ul.part-list,
+ul.car-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.part-list li,
+ul.car-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+ul.part-list li:last-child,
+ul.car-list li:last-child {
+    border-bottom: none;
+}
